@@ -2499,6 +2499,9 @@ var Janus = (function (factory) {
 									constraints[otherType] = otherConstraints[otherType];
 								}
 							}
+							console.log('Navigator debug info:', navigator);
+							console.log('MediaDevices available:', navigator.mediaDevices !== undefined);
+							console.log('getUserMedia available:', navigator.mediaDevices && navigator.mediaDevices.getUserMedia !== undefined);
 							stream = await navigator.mediaDevices.getUserMedia(constraints);
 							if(track.gumGroup && constraints.audio && constraints.video) {
 								// We just performed a grouped getUserMedia, keep track of the
