@@ -11,7 +11,7 @@ var opaqueId = "audiobridgetest-"+Janus.randomString(12);
 
 var remoteStream = null;
 
-var myroom = 3434;	// Demo room
+var myroom = 3434;	// Default room
 if(getQueryStringValue("room") !== "")
 	myroom = parseInt(getQueryStringValue("room"));
 var acodec = (getQueryStringValue("acodec") !== "" ? getQueryStringValue("acodec") : null);
@@ -463,7 +463,14 @@ function registerUsername() {
 			$('#username').removeAttr('disabled').val("");
 			$('#register').removeAttr('disabled').click(registerUsername);
 			return;
+			}
+		
+		// Get the room ID from input field, use default if empty
+		let roomId = $('#roomid').val();
+		if(roomId !== "") {
+			myroom = parseInt(roomId);
 		}
+		
 		let register = { request: "join", room: myroom, display: username, suspended: audiosuspended };
 		myusername = escapeXmlTags(username);
 		// Check if we need to join using G.711 instead of (default) Opus
