@@ -56,6 +56,8 @@ npm/src
 /conf/janus.plugin.lua.jcfg.sample
 /conf/janus.plugin.recordplay.jcfg.sample
 /conf/janus.plugin.streaming.jcfg.sample
+/share
+/html/recordings
 
 .deps
 .dirstamp

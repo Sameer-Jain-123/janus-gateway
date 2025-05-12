@@ -11,7 +11,7 @@ var opaqueId = "audiobridgetest-"+Janus.randomString(12);
 
 var remoteStream = null;
 
-var myroom = 1234;	// Demo room
+var myroom = 3434;	// Demo room
 if(getQueryStringValue("room") !== "")
 	myroom = parseInt(getQueryStringValue("room"));
 var acodec = (getQueryStringValue("acodec") !== "" ? getQueryStringValue("acodec") : null);
